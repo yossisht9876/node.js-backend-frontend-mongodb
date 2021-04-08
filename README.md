@@ -2,9 +2,8 @@
 node.js backend app + fronted up + mongoDB
 
 
-In this project you can find 3 folders: frontend and backend.
-This represents standard structure and web application.
-The app is written in node.js using express framework.
+In this project you can find 3 folders: frontend backend and mongodb.
+The apps is written in node.js using express framework.
 
 frontend app service will render the site
 backend app will serve as api layer for the app
