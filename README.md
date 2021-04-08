@@ -5,8 +5,8 @@ node.js backend app + fronted up + mongoDB
 In this project you can find 3 folders: frontend backend and mongodb.
 The apps is written in node.js using express framework.
 
-frontend app service will render the site
-backend app will serve as api layer for the app
+frontend app service will load the site,
+the backend app will serve as api layer for the app,
 mongodb is the DB behind the backend app
 
 
