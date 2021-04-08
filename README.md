@@ -31,7 +31,7 @@ base on 3 containers images (the dockerfiles can be found in the repos)
 1.clone the repo
 
 
-2.helm install <service-name> -n <namespace>  -- # example helm install backend-charts -n beckend
+2.helm install "service-name" -n "namespace"  -- # example helm install backend-charts -n beckend
 
 
 3.after the 3 services installed up and running, we can check the fronted app url 
