@@ -40,11 +40,26 @@ base on 3 containers images (the dockerfiles can be found in the repos)
 ![backend connection](https://user-images.githubusercontent.com/22144148/114088874-2b253900-98be-11eb-894e-df0cfde2b0e7.jpg)
   
  
+ and curl the fronted - curl -H "Content-Type: application/json" http://192.168.99.100:32311/
  
- 4. check the pods services
+ 
+ 
+ ![fronted_curl](https://user-images.githubusercontent.com/22144148/114174759-beec1900-9941-11eb-92b4-758e7300570d.jpg)
+
+ 
+check the backend service it should connect to the DB
+
+![backend-connection _to _db](https://user-images.githubusercontent.com/22144148/114174836-e17e3200-9941-11eb-8a50-88d6a22b5568.jpg)
+
+
+
+
+4. check the pods services
+ 
  
  
  ![services](https://user-images.githubusercontent.com/22144148/114088969-46904400-98be-11eb-8600-e27016f4b9ba.jpg)
+
 
 
 5. mongo logs can indecate if the app is up and if the database acceept connections
