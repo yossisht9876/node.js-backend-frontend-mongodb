@@ -1,0 +1,16 @@
+---
+image: yossisht11/backend:0.0.3
+
+serviceAccount:
+  # Specifies whether a service account should be created
+  create: false
+  # Annotations to add to the service account
+  annotations: {}
+  # The name of the service account to use.
+  # If not set and create is true, a name is generated using the fullname template
+  name: backend
+
+MONGO_DB_NAME: test
+MONGO_USERNAME: root
+MONGO_PASSWORD: rootxxx  # on prod env it shuld be as a secret
+back_type: NodePort

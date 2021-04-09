@@ -1,0 +1,35 @@
+---
+#apiVersion: v1
+#kind: Service
+#metadata:
+#  annotations:
+#    kubernetes.io/ingress.class: "traefik"
+#    traefik.ingress.kubernetes.io/frontend-entry-points: http,https
+#    traefik.ingress.kubernetes.io/redirect-entry-point: https
+#  name: raindrop
+#  labels:
+#    app: raindrop
+#spec:
+#  ports:
+#    - port: 8080
+#      protocol: TCP
+#  selector:
+#    app: raindrop
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: mongo-service
+  labels:
+    app: mongo-service
+spec:
+  #clusterIP: None
+  ports:
+    - port: 27017
+  selector:
+    app: mongo
+
+#      type: NodePort
+#      exposePort: 270177 // expose to node
+#      targetPort: 27017 // App server listening on this port
+#      internalPort: 2701 // Internal exposed within the pod

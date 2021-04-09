@@ -1,0 +1,42 @@
+---
+#apiVersion: v1
+#kind: Service
+#metadata:
+#  annotations:
+#    kubernetes.io/ingress.class: "traefik"
+#    traefik.ingress.kubernetes.io/frontend-entry-points: http,https
+#    traefik.ingress.kubernetes.io/redirect-entry-point: https
+#  name: raindrop
+#  labels:
+#    app: raindrop
+#spec:
+#  ports:
+#    - port: 8080
+#      protocol: TCP
+#  selector:
+#    app: raindrop
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: frontend-service
+  labels:
+    app: frontend-service
+spec:
+  type: "{{ .Values.back_type }}"
+  ports:
+    - port: 8080
+      targetPort: http
+  selector:
+    app: frontend-chart
+#  front_type: "{{ .Values.front_type }}"
+#  front_ports:
+#    - nodePort: 30500
+#      port: 8080
+#      targetPort: 30501
+#      back_port: 8080
+#      back_targetPort: 20801
+#      front_nodePort: 20803
+#      front_port: 8080
+#      front_targetPort: 20804
+

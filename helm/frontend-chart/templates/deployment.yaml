@@ -1,0 +1,25 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend-chart
+  labels:
+    app: frontend-chart
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: frontend-chart
+  template:
+    metadata:
+      labels:
+        app: frontend-chart
+    spec:
+      containers:
+        - name: frontend
+          image: "{{ .Values.image }}"
+          pullPolicy: "Always"
+          ports:
+            - containerPort: 8080
+              name: http
+

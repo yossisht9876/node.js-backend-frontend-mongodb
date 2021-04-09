@@ -1,0 +1,34 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend-chart
+  labels:
+    app: backend-chart
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: backend-chart
+  template:
+    metadata:
+      labels:
+        app: backend-chart
+    spec:
+      containers:
+        - name: backend
+          image: "{{ .Values.image }}"
+          pullPolicy: "Always"
+          ports:
+            - containerPort: 8080
+              name: http
+          env:
+            - name: MONGO_DB_NAME
+              value: "test"
+            - name: MONGO_PASSWORD
+              value: "rootxxx"       # on prod env it must be as secret
+            - name: MONGO_USERNAME
+              value: "root"          # on prod env it must be as secret
+            - name: MONGO_URL
+              value: "mongo-service:27017"
+

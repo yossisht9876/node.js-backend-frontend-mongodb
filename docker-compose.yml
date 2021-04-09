@@ -1,0 +1,20 @@
+version: "3"
+services:
+  mongo:
+    container_name: mongo
+    image: yossisht11/mongodb:0.0.1
+    volumes:
+      - ./data:/data/db
+    ports:
+      - "27017:27017"
+  frontend:
+    image: yossisht11/frontend:0.0.1
+    restart: always
+  backend:
+    image: yossisht11/backend:0.0.1
+    restart: always
+    ports:
+      - "8080:8080"
+    links:
+      - mongo
+
